@@ -1,5 +1,14 @@
 /* Global Variables */
+let baseURL = 'http://api.animalinfo.org/data/?animal='
+let apiKey = '&appid=9f15e45060...';
 
+document.getElementById('generate').addEventListener('click', performAction);
+
+function performAction(e){
+const newAnimal =  document.getElementById('animal').value;
+getAnimal(baseURL,newAnimal, apiKey)
+
+}
 const postData = async ( url = '', data = {})=>{
     // console.log(data)
       const response = await fetch(url, {
